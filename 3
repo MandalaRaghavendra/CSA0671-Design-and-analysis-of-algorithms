@@ -1,0 +1,15 @@
+def sum_of_squares_of_distinct_counts(nums):
+    n = len(nums)
+    distinct_count_sum = 0
+    
+    for i in range(n):
+        distinct_elements = set()
+        for j in range(i, n):
+            distinct_elements.add(nums[j])
+            distinct_count_sum += len(distinct_elements) ** 2
+            
+    return distinct_count_sum
+
+# Test cases
+print(sum_of_squares_of_distinct_counts([1, 2, 1]))  # Output: 15
+print(sum_of_squares_of_distinct_counts([1, 1]))  # Output: 3
